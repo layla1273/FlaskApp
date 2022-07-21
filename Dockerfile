@@ -1,8 +1,5 @@
 FROM python:3-alpine
 
-LABEL maintainer="Paul"
-LABEL company="QA LTD"
-
 EXPOSE 5000
 
 WORKDIR /app
