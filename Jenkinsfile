@@ -6,21 +6,7 @@ dockerImage = ''
 }
 agent any
 stages {
-stage ('Install requirements')
-{
-    steps{
-        script {
-            sh 'pip install -r requirements.txt'
-        }
-    }
-}
-stage ('Running tests'){
-    steps{
-        script {
-            sh 'pytest'
-        }
-    }
-}
+
 stage('Building our image') {
 steps{
 script {
