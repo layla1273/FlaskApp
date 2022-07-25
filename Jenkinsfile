@@ -28,7 +28,7 @@ agent any
         }
         steps{
             script{
-                sh 'uname -a'
+                sh 'python -m pip install --upgrade pip'        
             }
         }
     }
