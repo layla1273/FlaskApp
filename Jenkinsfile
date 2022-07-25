@@ -8,15 +8,7 @@ HOME = "${env.WORKSPACE}"
 agent any
     stages {
 
-    stage ('Testing'){
-        agent {docker {image 'python:3'}}
-        steps {
-            script {
-            sh 'pip install -r requirements.txt'
-            sh 'pytest'                
-            }
-        }
-    }
+
     stage('Building our image') {
     steps{
     script {
