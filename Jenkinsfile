@@ -16,7 +16,7 @@ agent any
 
     stage('Demo stage 1'){
         steps{
-            scripts{
+            script{
                 sh 'uname -a'
             }
         }
@@ -27,7 +27,7 @@ agent any
             docker 'python:3.6-alpine'
         }
         steps{
-            scripts{
+            script{
                 sh 'uname -a'
             }
         }
