@@ -1,6 +1,6 @@
 pipeline {
 environment {  
-registry = "paulmercer/flaskapp"  
+registry = "paulmercer/flaskapp"  # Change to your docker id / app name
 registryCredential = 'dockerhub_id'
 dockerImage = ''
 }
