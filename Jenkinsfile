@@ -9,10 +9,14 @@ agent any
 
     stage ('Testing'){
         agent {docker {image 'python3'}}
+        steps {
+            step {
         script {
             sh 'python -m pip install --upgrade pip'
             sh 'pip install -r requirements.txt'
             sh 'pytest'
+                }
+            }
         }
     }
     stage('Building our image') {
