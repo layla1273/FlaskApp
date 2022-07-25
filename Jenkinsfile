@@ -8,7 +8,7 @@ agent any
     stages {
 
     stage ('Testing'){
-        agent {docker {image 'python3'}}
+        agent {docker {image 'python:3'}}
         steps {
             script {
             sh 'python -m pip install --upgrade pip'
