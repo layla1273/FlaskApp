@@ -3,6 +3,7 @@ environment {
 registry = "paulmercer/flaskapp"  
 registryCredential = 'dockerhub_id'
 dockerImage = ''
+HOME = "${env.WORKSPACE}"
 }
 agent any
     stages {
