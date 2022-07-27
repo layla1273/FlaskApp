@@ -42,7 +42,7 @@ stage('Deploy to swarm')
 		transfers: 
 			[
 			sshTransfer(cleanRemote: false, excludes: '', 
-			execCommand: 'cd /swarm docker stack deploy -c docker-compose.yaml', 
+			execCommand: 'cd /home/jenkins/swarm docker stack deploy -c docker-compose.yaml', 
 			execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, 
 			patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '',
 			sourceFiles: 'docker-compose.yaml')
