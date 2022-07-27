@@ -37,6 +37,6 @@ class TestBase(TestCase):
 # Write a test class to test Read functionality
 class TestViews(TestBase):
     def test_home_get(self):
-        response = self.client.get(url_for('home'))
+        response = self.client.get(url_for('home2'))
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'MsWoman', response.data)
