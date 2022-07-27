@@ -40,3 +40,9 @@ class TestViews(TestBase):
         response = self.client.get(url_for('home'))
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'MsWoman', response.data)
+
+class TestViews2(TestBase):
+    def test_home_get(self):
+        response = self.client.get(url_for('home'))
+        self.assertEqual(response.status_code, 201)
+        self.assertIn(b'MsWoman', response.data)
