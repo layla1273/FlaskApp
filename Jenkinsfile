@@ -36,20 +36,7 @@ stage('Deploy to swarm')
     {
     steps
         {
-            sshPublisher(publishers: 
-	[
-	sshPublisherDesc(configName: 'SwarmMaster', 
-		transfers: 
-			[
-			sshTransfer(cleanRemote: false, excludes: '', 
-			execCommand: 'cd /home/jenkins/swarm docker stack deploy -c docker-compose.yaml', 
-			execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, 
-			patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '',
-			sourceFiles: 'docker-compose.yaml')
-			]
-			, usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)
-	]
-)
+            sshPublisher(publishers: [sshPublisherDesc(configName: 'SwarmMaster', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'docker stack deploy -c docker-compose.yaml', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/jenkins/swarm', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'docker-compose.yaml')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
         }    
     }
 stage('Cleaning up') {
