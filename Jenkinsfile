@@ -38,4 +38,9 @@ sh "docker rmi $registry:$BUILD_NUMBER"
 }
 }
 }
+    post {
+        always {
+            junit "*.xml"
+        }
+    }
 }
