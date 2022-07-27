@@ -7,7 +7,12 @@ HOME = "${env.WORKSPACE}"
 }
 agent any
     stages {
-
+    stage ('Testing')
+        {
+            steps{
+            sh 'pytest --junitxml results.xml'
+            }
+        }
 
     stage('Building our image') {
     steps{
