@@ -10,6 +10,7 @@ agent any
     stage ('Testing')
         {
             steps{
+            sh 'pip install -r requirements.txt'
             sh 'pytest --junitxml results.xml'
             }
         }
