@@ -3,3 +3,4 @@ Dockerfile
 venv
 __pycache__
 data.db
+results.xml
