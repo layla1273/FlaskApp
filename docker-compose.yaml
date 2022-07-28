@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  frontend:
+    image: paulmercer/flask-app
+    deploy:
+      replicas: 1
+    ports:
+    - published: 80
+      target: 80
+  backend:
+    image: mysql:5.6
+    deploy:
+      replicas: 1
+    ports:
+    - published: 3306
+      target: 3306
