@@ -41,11 +41,3 @@ class TestViews(TestBase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'MsWoman', response.data)
 
-
-
-    def test_home_get2(self):
-        response = self.client.get(url_for('home'))
-        self.assertEqual(response.status_code, 200)
-
-
-  
