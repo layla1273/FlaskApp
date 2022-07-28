@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   frontend:
-    image: paulmercer/flask-app
+    image: paulmercer/flaskapp
     deploy:
       replicas: 1
     ports:
