@@ -23,7 +23,7 @@ agent any
     }
     }
 
-    stage('Deploy our image') {
+    stage('Push image to Docker Hub') {
     steps{
     script {
     docker.withRegistry( '', registryCredential ) {

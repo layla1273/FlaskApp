@@ -2,7 +2,6 @@ version: '3.7'
 services:
   frontend:
     image: paulmercer/flaskapp:latest
-    pull_policy: always
     deploy:
       replicas: 1
     ports:
