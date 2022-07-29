@@ -18,7 +18,7 @@ agent any
     stage('Building our image') {
     steps{
     script {
-    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+    dockerImage = docker.build(registry)
     }
     }
     }
@@ -27,7 +27,8 @@ agent any
     steps{
     script {
     docker.withRegistry( '', registryCredential ) {
-    dockerImage.push()
+        dockerImage.push("${env.BUILD_NUMBER}")
+        dockerImage.push("latest")
     }
     }
     }
